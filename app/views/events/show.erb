@@ -1,0 +1,10 @@
+<div class="container">
+  <ul>
+    <li>Title: <%= @event.title %></li>
+    <li>Location: <%= @event.location %></li>
+    <li>Date: <%= @event.date %></li>
+    <li><p><%= @event.description %></p></li>
+    <li>Organizer <%= @event.host.username %></li>
+  </ul>
+  <a href="/events">back to all events</a>
+</div>

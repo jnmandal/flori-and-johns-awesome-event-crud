@@ -1,0 +1,8 @@
+<form method="post" action="/events/<%= @event.id %>">
+  <input name="_method" type="hidden" value="put">
+  <input type="text" placeholder="title" name="event[title]" value = "<%= @event.title %>">
+  <input type="text" placeholder="location" name="event[location]" value = "<%= @event.location %>">
+  <input type="date" placeholder="date" name="event[date]" value = "<%= @event.date %>">
+  <textarea type="text" placeholder="description" name="event[description]"><%= @event.description %></textarea>
+  <input type="submit" value = "Update Event">
+</form>

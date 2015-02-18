@@ -1,7 +1,20 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $(".edit_form").hide();
+  $(".delete_button").on("click", function() {
+    var event_id = $(this).closest("tr").attr("id");
+    var request = $.ajax({
+      url: "/events/"+event_id,
+      method: "delete"
+    });
+    request.done(function(){
+      $("tr#"+event_id).remove();
+    });
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(".edit_button").on("click", function(){
+    var table_row = 1;
+    var event_id = $(this).closest("tr").attr("id");
+
+  });
+
 });
