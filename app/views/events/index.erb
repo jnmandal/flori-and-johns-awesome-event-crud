@@ -12,7 +12,7 @@
       <td><%=event.location%></td>
       <td><%=event.date%></td>
       <td><%=event.host.username%></td>
-      <% if current_user == event.host %>
+      <% if current_user && current_user == event.host %>
         <td><button class="edit_button">edit</button></td>
         <td><button class="delete_button">delete</button></td>
         <tr class="edit_form" style = "display:none">
