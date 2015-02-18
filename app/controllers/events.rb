@@ -35,8 +35,14 @@ end
 put '/events/:id' do
   login_required
   @event = Event.find(params[:id])
-  redirect "/events/#{@event.id}" if @event.update(params[:event])
-  erb :"events/edit"
+  @event.update(params[:event])
+  if request.xhr?
+    content_type :json
+    @event.to_json
+  else
+    redirect "/events/#{@event.id}" unless @event.any_errors?
+    erb :"events/edit"
+  end
 end
 
 delete '/events/:id' do

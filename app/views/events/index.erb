@@ -16,11 +16,11 @@
         <td><button class="edit_button">edit</button></td>
         <td><button class="delete_button">delete</button></td>
         <tr class="edit_form" style = "display:none">
-          <td><input type="text" value="<%=event.title%>"></td>
-          <td><input type="text" value="<%=event.location%>"></td>
-          <td><input type="text" value="<%=event.date%>"></td>
-          <td><input type="text" value="<%=event.host.username%>" disabled></td>
-          <td><button class="save_button">save</button></td>
+          <td><input type="text" name = "event[title]" value="<%=event.title%>"></td>
+          <td><input type="text" name = "event[location]" value="<%=event.location%>"></td>
+          <td><input type="date" name = "event[date]" value="<%=event.date%>"></td>
+          <td><input type="text" name = "event[host]" value="<%=event.host.username%>" disabled></td>
+          <td><button class="update_button">save</button></td>
         </tr>
       <% end %>
     </tr>
